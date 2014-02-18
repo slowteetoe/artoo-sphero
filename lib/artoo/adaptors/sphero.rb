@@ -35,9 +35,13 @@ module Artoo
       # Closes connection with device
       # @return [Boolean]
       def disconnect
+        puts "TESTING DISCONNECT ======>>>"
+        puts "connected value 1: #{ connected? }"
         sphero.close if connected?
-
         super
+        puts "connected value 2: #{ connected? }"
+        puts "Finalized"
+        true
       end
 
       # Uses method missing to call sphero actions
